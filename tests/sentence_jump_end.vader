@@ -1,0 +1,61 @@
+#############################################################
+# Tests to jump to beginning of sentences using 'g(' and 'g)'
+#############################################################
+
+Execute (Clean up test environment):
+  " enables default functionality, including motions
+  call quotable#init()
+
+###########################################################
+
+Given:
+  TV's Frank: [shouts] Not the children! Aw-haw-haw!
+
+Do (jump to end of first sentence):
+  g)rX
+
+Expect:
+  TV's Frank: [shouts] Not the childrenX Aw-haw-haw!
+
+###########################################################
+
+Given:
+  TV's Frank: [shouts] Not the children! Aw-haw-haw!
+
+Do (from end, jump to end of first sentence):
+  $g(rX
+
+Expect:
+  TV's Frank: [shouts] Not the childrenX Aw-haw-haw!
+
+###########################################################
+
+Given:
+  The other day, my colon looked up at me and said, “Frank, thank you.” I said
+  “No. Thank YOU.” But now, what am I going to do with all the meat I have
+  stored in freezers? I figured, “Hey, why not bring the meat back to life?”
+
+Do (jump to end of three sentences):
+  3g)rX
+
+Expect:
+  The other day, my colon looked up at me and said, “Frank, thank you.” I said
+  “No. Thank YOU.X But now, what am I going to do with all the meat I have
+  stored in freezers? I figured, “Hey, why not bring the meat back to life?”
+
+###########################################################
+
+Given:
+  The other day, my colon looked up at me and said, “Frank, thank you.” I said
+  “No. Thank YOU.” But now, what am I going to do with all the meat I have
+  stored in freezers? I figured, “Hey, why not bring the meat back to life?”
+
+Do (from end jump 3 sentences backwards):
+  G$3g(rX
+
+Expect:
+  The other day, my colon looked up at me and said, “Frank, thank you.” I said
+  “NoX Thank YOU.” But now, what am I going to do with all the meat I have
+  stored in freezers? I figured, “Hey, why not bring the meat back to life?”
+
+###########################################################

@@ -1,0 +1,358 @@
+Execute (Clean up test environment):
+  call quotable#init()
+
+# TODO tests with parenthesis
+# TODO tests with punctuation
+# TODO tests with markdown
+
+###########################################################
+
+Given:
+  So what we've done is taken the whole Foosball concept, and
+  uh... We've caulked this, added water, and we've turned it
+  into Water Polo. Woo!
+
+Do (select first sentence):
+  vixU
+
+Expect:
+  SO WHAT WE'VE DONE IS TAKEN THE WHOLE FOOSBALL CONCEPT, AND
+  UH... We've caulked this, added water, and we've turned it
+  into Water Polo. Woo!
+
+###########################################################
+
+Given:
+  So what we've done is taken the whole Foosball concept, and
+  uh... We've caulked this, added water, and we've turned it
+  into Water Polo. Woo!
+
+Do (select second sentence):
+  /caulked\<Enter>vixU
+
+Expect:
+  So what we've done is taken the whole Foosball concept, and
+  uh... WE'VE CAULKED THIS, ADDED WATER, AND WE'VE TURNED IT
+  INTO WATER POLO. Woo!
+
+###########################################################
+
+Given:
+  So what we've done is taken the whole Foosball concept, and
+  uh... We've caulked this, added water, and we've turned it
+  into Water Polo. Woo!
+
+Do (select third sentence):
+  /woo\<Enter>vixU
+
+Expect:
+  So what we've done is taken the whole Foosball concept, and
+  uh... We've caulked this, added water, and we've turned it
+  into Water Polo. WOO!
+
+###########################################################
+
+Given:
+  We've caulked this, added water, and we've turned it into Water Polo. TV's
+  Frank not the children. Aw-haw-haw. The other day, my colon looked up
+  at me and said, “Frank, thank you.”
+
+Do (select line starting with upper):
+  /Frank\<Enter>vixu
+
+Expect:
+  We've caulked this, added water, and we've turned it into Water Polo. tv's
+  frank not the children. Aw-haw-haw. The other day, my colon looked up
+  at me and said, “Frank, thank you.”
+
+###########################################################
+
+Given:
+  Frank:
+  We've caulked this, added water, and we've turned it into 
+  Water Polo! Aw-haw-haw.
+
+Do (select line ending with colon):
+  vixU
+
+Expect:
+  FRANK:
+  WE'VE CAULKED THIS, ADDED WATER, AND WE'VE TURNED IT INTO 
+  WATER POLO! Aw-haw-haw.
+
+###########################################################
+
+Given:
+  We've caulked this—
+  Added water, and we've turned it into 
+  Water Polo! Aw-haw-haw.
+
+Do (select sentence with em dash):
+  vixU
+
+Expect:
+  WE'VE CAULKED THIS—
+  ADDED WATER, AND WE'VE TURNED IT INTO 
+  WATER POLO! Aw-haw-haw.
+
+###########################################################
+
+Given:
+  We've caulked this—
+  Added water, and we've turned it into 
+  Water Polo! Aw-haw-haw.
+
+Do (from below, select sentence with em dash):
+  jjvixU
+
+Expect:
+  WE'VE CAULKED THIS—
+  ADDED WATER, AND WE'VE TURNED IT INTO 
+  WATER POLO! Aw-haw-haw.
+
+###########################################################
+
+Given:
+  We've caulked this–
+  Added water, and we've turned it into 
+  Water Polo! Aw-haw-haw.
+
+Do (from below, select sentence with en dash):
+  jjvixU
+
+Expect:
+  WE'VE CAULKED THIS–
+  ADDED WATER, AND WE'VE TURNED IT INTO 
+  WATER POLO! Aw-haw-haw.
+
+###########################################################
+
+Given:
+  The number 12abc34
+  We've caulked this, added water, and we've turned it into 
+  Water Polo! Aw-haw-haw.
+
+Do (select line preceded by number):
+  jvixU
+
+Expect:
+  THE NUMBER 12ABC34
+  WE'VE CAULKED THIS, ADDED WATER, AND WE'VE TURNED IT INTO 
+  WATER POLO! Aw-haw-haw.
+
+###########################################################
+
+Given:
+  Frank:
+
+  We've caulked this, added water, and we've turned it into 
+  Water Polo! Aw-haw-haw.
+
+Do (select isolated line ending with colon):
+  vixU
+
+Expect:
+  FRANK:
+
+  We've caulked this, added water, and we've turned it into 
+  Water Polo! Aw-haw-haw.
+
+###########################################################
+
+Given:
+  Frank:
+  - Crow
+  - Servo
+  - Gypsy
+
+  TV's Frank shouts Not the children. Aw-haw-haw.
+
+Do (select isolated line ending with colon):
+  vixU
+
+Expect:
+  FRANK:
+  - CROW
+  - SERVO
+  - GYPSY
+
+  TV's Frank shouts Not the children. Aw-haw-haw.
+
+###########################################################
+
+Given:
+  TV's Frank [shouts] "Not the children, Aw-haw-haw."
+
+Do (select sentence with double straight trailing quotes):
+  vixAX
+
+Expect:
+  TV's Frank [shouts] "Not the children, Aw-haw-haw."X
+
+###########################################################
+
+Given:
+  TV's Frank [shouts] 'Not the children, Aw-haw-haw.'
+
+Do (select sentence with single straight trailing quotes):
+  vixAX
+
+Expect:
+  TV's Frank [shouts] 'Not the children, Aw-haw-haw.'X
+
+###########################################################
+
+Given:
+  TV's Frank [shouts] “Not the children, Aw-haw-haw.”
+
+Do (select sentence with curly trailing quotes):
+  vixAX
+
+Expect:
+  TV's Frank [shouts] “Not the children, Aw-haw-haw.”X
+
+###########################################################
+
+Given:
+  Scene. "Not the children, Aw-haw-haw," shouted TV's Frank.
+
+Do (select sentence with double straight leading quote):
+  /Not\<Enter>vix\<Esc>`<iX
+
+Expect:
+  Scene. X"Not the children, Aw-haw-haw," shouted TV's Frank.
+
+###########################################################
+
+Given:
+  Scene. 'Not the children, Aw-haw-haw,' shouted TV's Frank.
+
+Do (select sentence with single straight leading quote):
+  /Not\<Enter>vix\<Esc>`<iX
+
+Expect:
+  Scene. X'Not the children, Aw-haw-haw,' shouted TV's Frank.
+
+###########################################################
+
+Given:
+  Scene. ‘Not the children, Aw-haw-haw,’ shouted TV’s Frank.
+
+Do (select sentence with single straight curly quote):
+  /Not\<Enter>vix\<Esc>`<iX
+
+Expect:
+  Scene. X‘Not the children, Aw-haw-haw,’ shouted TV’s Frank.
+
+###########################################################
+
+Given:
+  Scene. “Not the children, Aw-haw-haw,” shouted TV’s Frank.
+
+Do (select sentence with single straight curly quote):
+  /Not\<Enter>vix\<Esc>`<iX
+
+Expect:
+  Scene. X“Not the children, Aw-haw-haw,” shouted TV’s Frank.
+
+###########################################################
+
+# TODO is this correct?
+
+Given:
+  I said
+  “No. THANK YOU.”
+
+Do (two sentences within curly quotes):
+  vix\<Esc>`>aX
+
+Expect:
+  I said
+  “No.X THANK YOU.”
+
+###########################################################
+
+Given:
+  The other day, my colon looked up
+  at me and said, Frank, thank you.
+
+Do (comma before upper case):
+  /Frank\<Enter>vixU
+
+Expect:
+  THE OTHER DAY, MY COLON LOOKED UP
+  AT ME AND SAID, FRANK, THANK YOU.
+
+###########################################################
+
+Given:
+  The other day, my colon looked up
+  at me and said-Frank-thank you.
+
+Do (dash before upper case):
+  /Frank\<Enter>vixU
+
+Expect:
+  THE OTHER DAY, MY COLON LOOKED UP
+  AT ME AND SAID-FRANK-THANK YOU.
+
+###########################################################
+
+Given:
+  The other day, my colon looked up
+  at me and said;Frank;thank you.
+
+Do (semi-colon before upper case):
+  /Frank\<Enter>vixU
+
+Expect:
+  THE OTHER DAY, MY COLON LOOKED UP
+  AT ME AND SAID;FRANK;THANK YOU.
+
+###########################################################
+
+Given:
+  The other day, my colon looked up
+  at me and said: Frank, thank you.
+
+Do (colon before upper case):
+  /Frank\<Enter>vixU
+
+Expect:
+  THE OTHER DAY, MY COLON LOOKED UP
+  AT ME AND SAID: FRANK, THANK YOU.
+
+###########################################################
+
+Given:
+  "Why am _I_ Mr. Pink?"
+
+Do (select sentence with Mr.):
+  vixU
+
+Expect:
+  "WHY AM _I_ MR. PINK?"
+
+###########################################################
+
+Given:
+  "Why am _I_ Mr? Pink?"
+
+Do (select sentence with Mr?):
+  vixU
+
+Expect:
+  "WHY AM _I_ MR? Pink?"
+
+###########################################################
+
+Given:
+  "A sentence with Mr. Ms. Dr.. Amazing!"
+
+Do (select sentence with multiple acryonyms):
+  vixU
+
+Expect:
+  "A SENTENCE WITH MR. MS. DR.. Amazing!"
+
+###########################################################
