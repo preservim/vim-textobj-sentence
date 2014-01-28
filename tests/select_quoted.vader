@@ -145,3 +145,16 @@ Expect:
   IN THE SOFTWARE WITHOUT RESTRICTION, INCLUDING WITHOUT LIMITATION THE RIGHTS.
 
 ###########################################################
+
+Given:
+  G
+  “F.”
+
+Do (Selected double quoted at end of sentence):
+  jlllvixu
+
+Expect:
+  g
+  “f.”
+
+###########################################################

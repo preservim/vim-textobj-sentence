@@ -74,7 +74,7 @@ let s:re_term =
     \ ']?'
 
 " Avoid matching where more of the sentence can be found on preceding line(s)
-let s:re_negative_lookback = '([[:alnum:]"]([–—,;:-]|\_s)*)@<!'
+let s:re_negative_lookback = '([[:alnum:]](["–—,;:-]|\_s)*)@<!'
 
 " sentence can also end when followed by at least two line feeds
 let s:re_sentence_term = '(' . s:re_term . '|\ze(\n\n|\_s*%$))'
