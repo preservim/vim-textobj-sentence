@@ -69,7 +69,7 @@ Expect:
 
 Given:
   Frank:
-  We've caulked this, added water, and we've turned it into 
+  We've caulked this, added water, and we've turned it into
   Water Polo! Aw-haw-haw.
 
 Do (select line ending with colon):
@@ -77,14 +77,14 @@ Do (select line ending with colon):
 
 Expect:
   FRANK:
-  WE'VE CAULKED THIS, ADDED WATER, AND WE'VE TURNED IT INTO 
+  WE'VE CAULKED THIS, ADDED WATER, AND WE'VE TURNED IT INTO
   WATER POLO! Aw-haw-haw.
 
 ###########################################################
 
 Given:
   We've caulked this—
-  Added water, and we've turned it into 
+  Added water, and we've turned it into
   Water Polo! Aw-haw-haw.
 
 Do (select sentence with em dash):
@@ -92,14 +92,14 @@ Do (select sentence with em dash):
 
 Expect:
   WE'VE CAULKED THIS—
-  ADDED WATER, AND WE'VE TURNED IT INTO 
+  ADDED WATER, AND WE'VE TURNED IT INTO
   WATER POLO! Aw-haw-haw.
 
 ###########################################################
 
 Given:
   We've caulked this—
-  Added water, and we've turned it into 
+  Added water, and we've turned it into
   Water Polo! Aw-haw-haw.
 
 Do (from below, select sentence with em dash):
@@ -107,14 +107,14 @@ Do (from below, select sentence with em dash):
 
 Expect:
   WE'VE CAULKED THIS—
-  ADDED WATER, AND WE'VE TURNED IT INTO 
+  ADDED WATER, AND WE'VE TURNED IT INTO
   WATER POLO! Aw-haw-haw.
 
 ###########################################################
 
 Given:
   We've caulked this–
-  Added water, and we've turned it into 
+  Added water, and we've turned it into
   Water Polo! Aw-haw-haw.
 
 Do (from below, select sentence with en dash):
@@ -122,14 +122,14 @@ Do (from below, select sentence with en dash):
 
 Expect:
   WE'VE CAULKED THIS–
-  ADDED WATER, AND WE'VE TURNED IT INTO 
+  ADDED WATER, AND WE'VE TURNED IT INTO
   WATER POLO! Aw-haw-haw.
 
 ###########################################################
 
 Given:
   The number 12abc34
-  We've caulked this, added water, and we've turned it into 
+  We've caulked this, added water, and we've turned it into
   Water Polo! Aw-haw-haw.
 
 Do (select line preceded by number):
@@ -137,7 +137,7 @@ Do (select line preceded by number):
 
 Expect:
   THE NUMBER 12ABC34
-  WE'VE CAULKED THIS, ADDED WATER, AND WE'VE TURNED IT INTO 
+  WE'VE CAULKED THIS, ADDED WATER, AND WE'VE TURNED IT INTO
   WATER POLO! Aw-haw-haw.
 
 ###########################################################
@@ -145,7 +145,7 @@ Expect:
 Given:
   Frank:
 
-  We've caulked this, added water, and we've turned it into 
+  We've caulked this, added water, and we've turned it into
   Water Polo! Aw-haw-haw.
 
 Do (select isolated line ending with colon):
@@ -154,7 +154,7 @@ Do (select isolated line ending with colon):
 Expect:
   FRANK:
 
-  We've caulked this, added water, and we've turned it into 
+  We've caulked this, added water, and we've turned it into
   Water Polo! Aw-haw-haw.
 
 ###########################################################
@@ -354,5 +354,31 @@ Do (select sentence with multiple acryonyms):
 
 Expect:
   "A SENTENCE WITH MR. MS. DR.. Amazing!"
+
+###########################################################
+
+Given:
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights.
+
+Do (select sentence with earlier double quotes):
+  jjvixU
+
+Expect:
+  PERMISSION IS HEREBY GRANTED, FREE OF CHARGE, TO ANY PERSON OBTAINING A COPY
+  OF THIS SOFTWARE AND ASSOCIATED DOCUMENTATION FILES (THE "SOFTWARE"), TO DEAL
+  IN THE SOFTWARE WITHOUT RESTRICTION, INCLUDING WITHOUT LIMITATION THE RIGHTS.
+
+###########################################################
+
+Given:
+  Here comes the end of file:
+
+Do (select sentence ending in colon at end of buffer):
+  vixU
+
+Expect:
+  HERE COMES THE END OF FILE:
 
 ###########################################################

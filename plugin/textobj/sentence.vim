@@ -61,11 +61,12 @@ let s:re_sentence_body =
     \ g:textobj#sentence#quotable_dl .
     \ ']?[[:upper:]]\_.{-}'
 
+" experiment with limit of 10 on lookback
 let s:re_abbrev_neg_lookback =
     \ len(g:textobj#sentence#abbreviations) > 0
     \ ? '(' .
     \   join(g:textobj#sentence#abbreviations, '|') .
-    \   ')@<!'
+    \   ')@10<!'
     \ : ''
 
 " matching against end of sentence, '!', '?', and non-abbrev '.'
