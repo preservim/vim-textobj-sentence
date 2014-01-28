@@ -1,0 +1,89 @@
+Execute (Clean up test environment):
+
+###########################################################
+
+Given:
+  Here comes the end of file:
+
+Do (select incomplete sentence ending in colon at end of buffer):
+  vixU
+
+Expect:
+  HERE COMES THE END OF FILE:
+
+###########################################################
+
+Given:
+  Here comes the end of file-
+
+Do (select incomplete sentence ending in dash at end of buffer):
+  vixU
+
+Expect:
+  HERE COMES THE END OF FILE-
+
+###########################################################
+
+Given:
+  Here comes the end of file;
+
+Do (select incomplete sentence ending in semi-colon at end of buffer):
+  vixU
+
+Expect:
+  HERE COMES THE END OF FILE;
+
+###########################################################
+
+Given:
+  Here comes the end of file
+
+Do (select incomplete sentence at end of buffer):
+  vixU
+
+Expect:
+  HERE COMES THE END OF FILE
+
+Given:
+  of this software.
+
+Do (partial at beginning):
+  vixU
+
+Expect:
+  OF THIS SOFTWARE.
+
+###########################################################
+
+Given:
+  \tof this software.
+
+Do (tab partial at beginning):
+  vixU
+
+Expect:
+  \tOF THIS SOFTWARE.
+
+###########################################################
+
+Given:
+  Frank:
+  - Crow
+  - Servo
+  - Gypsy
+
+  TV's Frank shouts Not the children. Aw-haw-haw.
+
+Do (select isolated line ending with colon):
+  vixU
+
+Expect:
+  FRANK:
+  - CROW
+  - SERVO
+  - GYPSY
+
+  TV's Frank shouts Not the children. Aw-haw-haw.
+
+###########################################################
+

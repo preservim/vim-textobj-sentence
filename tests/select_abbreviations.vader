@@ -1,0 +1,36 @@
+Execute (Clean up test environment):
+
+###########################################################
+
+Given:
+  "Why am _I_ Mr. Pink?"
+
+Do (select sentence with Mr.):
+  vixU
+
+Expect:
+  "WHY AM _I_ MR. PINK?"
+
+###########################################################
+
+Given:
+  "Why am _I_ Mr? Pink?"
+
+Do (select sentence with Mr?):
+  vixU
+
+Expect:
+  "WHY AM _I_ MR? Pink?"
+
+###########################################################
+
+Given:
+  "A sentence with Mr. Ms. Dr.. Amazing!"
+
+Do (select sentence with multiple acryonyms):
+  vixU
+
+Expect:
+  "A SENTENCE WITH MR. MS. DR.. Amazing!"
+
+###########################################################

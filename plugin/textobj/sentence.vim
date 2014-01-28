@@ -38,20 +38,13 @@ endif
 
 if !exists('g:textobj#sentence#abbreviations')
   let g:textobj#sentence#abbreviations = [
-    \ 'Mr', 'Ms', 'Mrs', 'Dr', 'Prof', 'Sr', 'Jr',
+    \ 'Mr', 'Mr?s', 'Drs?', 'Prof', '[JS]r',
     \ 'vs', 'etc', 'no', 'esp',
-    \ 'Mt', 'Ft',
-    \ 'Ave', 'Blvd', 'Cl', 'Ct', 'Str',]
+    \ '[FM]t',
+    \ 'Ave', 'Blvd', 'C[lt]', 'Str',]
 endif
 
-" TODO markdown support (bold, italic, link)
-" TODO dynamic quote support
-" TODO parentheses brackets
-
 let s:quotes_std = '"'''
-
-" Avoid matching where more of the sentence can be found on preceding line(s)
-let s:re_negative_lookback = '([[:alnum:]"]([–—,;:-]|\_s)*)@<!'
 
 " body (sans term) starts with an uppercase character (excluding acronyms)
 let s:re_sentence_body =
@@ -62,6 +55,7 @@ let s:re_sentence_body =
     \ ']?[[:upper:]]\_.{-}'
 
 " experiment with limit of 10 on lookback
+" TODO query the largest of the abbreviations
 let s:re_abbrev_neg_lookback =
     \ len(g:textobj#sentence#abbreviations) > 0
     \ ? '(' .
@@ -78,6 +72,9 @@ let s:re_term =
     \ g:textobj#sentence#quotable_sr .
     \ g:textobj#sentence#quotable_dr .
     \ ']?'
+
+" Avoid matching where more of the sentence can be found on preceding line(s)
+let s:re_negative_lookback = '([[:alnum:]"]([–—,;:-]|\_s)*)@<!'
 
 " sentence can also end when followed by at least two line feeds
 let s:re_sentence_term = '(' . s:re_term . '|\ze(\n\n|\_s*%$))'

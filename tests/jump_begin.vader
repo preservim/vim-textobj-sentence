@@ -3,8 +3,6 @@
 ###########################################################
 
 Execute (Clean up test environment):
-  " enables default functionality, including motions
-  call quotable#init()
 
 ###########################################################
 
@@ -16,36 +14,6 @@ Do (jump to start of next sentence):
 
 Expect ():
   TV's Frank: [shouts] Not the children! AW-haw-haw!
-
-###########################################################
-
-Given:
-  The other day, my colon looked up at me and said, “Frank, thank you.” I said
-  “No. Thank YOU.” But now, what am I going to do with all the meat I have
-  stored in freezers? I figured, “Hey, why not bring the meat back to life?”
-
-Do (jump three sentences):
-  3)viwU
-
-Expect:
-  The other day, my colon looked up at me and said, “Frank, thank you.” I said
-  “No. THANK YOU.” But now, what am I going to do with all the meat I have
-  stored in freezers? I figured, “Hey, why not bring the meat back to life?”
-
-###########################################################
-
-Given:
-  The other day, my colon looked up at me and said, “Frank, thank you.” I said
-  “No. Thank YOU.” But now, what am I going to do with all the meat I have
-  stored in freezers? I figured, “Hey, why not bring the meat back to life?”
-
-Do (jump five sentences forward and three back):
-  5)3(rX
-
-Expect:
-  The other day, my colon looked up at me and said, “Frank, thank you.” I said
-  XNo. Thank YOU.” But now, what am I going to do with all the meat I have
-  stored in freezers? I figured, “Hey, why not bring the meat back to life?”
 
 ###########################################################
 
