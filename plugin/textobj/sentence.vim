@@ -77,7 +77,7 @@ let s:re_term =
 let s:re_sentence_term = '(' . s:re_term . '|\ze(\n\n|\_s*%$))'
 
 " Avoid matching where more of the sentence can be found on preceding line(s)
-let s:re_negative_lookback = '([“[:alnum:]](["–—,;:-]|\_s)*)@<!'
+let s:re_negative_lookback = '([[:alnum:]"–—,;:-]\_s*)@<!'
 
 let g:textobj#sentence#re_i =
       \ '\v' .
