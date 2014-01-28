@@ -44,14 +44,14 @@ if !exists('g:textobj#sentence#abbreviations')
     \ 'Ave', 'Blvd', 'Cl', 'Ct', 'Str',]
 endif
 
-" sentence motion
 " TODO markdown support (bold, italic, link)
 " TODO dynamic quote support
+" TODO parentheses brackets
 
 let s:quotes_std = '"'''
 
 " Avoid matching where more of the sentence can be found on preceding line(s)
-let s:re_negative_lookback = '([[:alnum:]]([–—,;:-]|\_s)*)@<!'
+let s:re_negative_lookback = '([[:alnum:]"]([–—,;:-]|\_s)*)@<!'
 
 " body (sans term) starts with an uppercase character (excluding acronyms)
 let s:re_sentence_body =
