@@ -94,7 +94,7 @@ let g:textobj#sentence#re_i =
 " TODO do we need $
 let g:textobj#sentence#re_a =
     \ g:textobj#sentence#re_i .
-    \ '($|\s*)'
+    \ '\s*'
 
 call textobj#user#plugin('sentence', {
 \      'select': {

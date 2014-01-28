@@ -205,3 +205,31 @@ Expect:
   AT ME AND SAID: FRANK, THANK YOU.
 
 ###########################################################
+
+Given:
+  So what we've done is taken the whole Foosball concept, and
+  uh... We've caulked this, added water, and we've turned it
+  into Water Polo. Woo!
+
+Do (select all of first sentence):
+  vasrX
+
+Expect:
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  XXXXXXWe've caulked this, added water, and we've turned it
+  into Water Polo. Woo!
+
+###########################################################
+
+Given:
+  So what we've done is taken the whole Foosball concept, and
+  uh... We've caulked this, added water, and we've turned it
+  into Water Polo. Woo!
+
+Do (select all of third sentence):
+  /Woo\<Enter>vasrX
+
+Expect:
+  So what we've done is taken the whole Foosball concept, and
+  uh... We've caulked this, added water, and we've turned it
+  into Water Polo. XXXX
