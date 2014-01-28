@@ -12,12 +12,12 @@ Given:
   stored in freezers? I figured, “Hey, why not bring the meat back to life?”
 
 Do (jump three sentences):
-  3)viwU
+  3)vixU
 
 Expect:
   The other day, my colon looked up at me and said, “Frank, thank you.” I said
-  “No. THANK YOU.” But now, what am I going to do with all the meat I have
-  stored in freezers? I figured, “Hey, why not bring the meat back to life?”
+  “No. Thank YOU.” BUT NOW, WHAT AM I GOING TO DO WITH ALL THE MEAT I HAVE
+  STORED IN FREEZERS? I figured, “Hey, why not bring the meat back to life?”
 
 ###########################################################
 
@@ -26,12 +26,12 @@ Given:
   “No. Thank YOU.” But now, what am I going to do with all the meat I have
   stored in freezers? I figured, “Hey, why not bring the meat back to life?”
 
-Do (jump five sentences forward and three back):
-  5)3(rX
+Do (jump four sentences forward and three back):
+  4)3(rX
 
 Expect:
-  The other day, my colon looked up at me and said, “Frank, thank you.” I said
-  XNo. Thank YOU.” But now, what am I going to do with all the meat I have
+  The other day, my colon looked up at me and said, “Frank, thank you.” X said
+  “No. Thank YOU.” But now, what am I going to do with all the meat I have
   stored in freezers? I figured, “Hey, why not bring the meat back to life?”
 
 ###########################################################
