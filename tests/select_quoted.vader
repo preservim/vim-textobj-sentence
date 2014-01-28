@@ -1,4 +1,5 @@
 Execute (Clean up test environment):
+  call textobj#sentence#init()
 
 ###########################################################
 
@@ -78,8 +79,6 @@ Expect:
   Scene. X“Not the children, Aw-haw-haw,” shouted TV’s Frank.
 
 ###########################################################
-
-# TODO is this correct?
 
 Given:
   I said

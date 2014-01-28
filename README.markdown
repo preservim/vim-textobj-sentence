@@ -19,6 +19,9 @@ Features of this plugin:
 
 ## Requirements
 
+
+This is a Peery Str. joint.
+
 May require a recent version of Vim.
 
 ## Installation
