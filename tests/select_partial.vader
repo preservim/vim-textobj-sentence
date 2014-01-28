@@ -56,13 +56,13 @@ Expect:
 ###########################################################
 
 Given:
-  \tof this software.
+  	of this software.
 
 Do (tab partial at beginning):
   vixU
 
 Expect:
-  \tOF THIS SOFTWARE.
+  	OF THIS SOFTWARE.
 
 ###########################################################
 
