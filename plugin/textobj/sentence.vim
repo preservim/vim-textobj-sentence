@@ -80,7 +80,7 @@ let s:re_term =
     \ ']?'
 
 " sentence can also end when followed by at least two line feeds
-let s:re_sentence_term = '(' . s:re_term . '|\ze\n\n)'
+let s:re_sentence_term = '(' . s:re_term . '|\ze(\n\n|\_s*%$))'
 
 let g:textobj#sentence#re_i =
       \ '\v' .
