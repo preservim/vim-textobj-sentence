@@ -1,6 +1,13 @@
 # vim-textobj-sentence
 
-> Improving on Vim's native sentence motion
+> Improving on Vim's native sentence motion command
+
+Detecting sentences can be tricky, esp. when you consider 
+they can interspersed
+with abbreviations, “quotations,” punctuation, and hard line breaks.
+
+The native sentence motion command is quite capable, but its reach is
+limited, such as not properly recognizing typographic quotes.
 
 Features of this plugin:
 
@@ -25,15 +32,6 @@ install.
 * [kana/vim-textobject-user](https://github.com/kana/vim-textobj-user) - a Vim plugin to create your own text objects without pain
 
 ## Configuration
-
-### Abbreviations as false sentence endings
-
-Detecting sentences can be tricky, where sometimes this plugin needs
-a hint:
-
-```
-Mr. Maybe and Ms. Undecided watched Dr. No. I liked it.
-```
 
 To avoid false ends of sentences, this plugin detects common
 abbreviations with the default that you can change in your `.vimrc`:

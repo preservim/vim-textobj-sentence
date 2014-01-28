@@ -2,7 +2,7 @@
 " File:        textobj_sentence.vim
 " Description: load functions for vim-textobj_sentence plugin
 " Maintainer:  Reed Esau <github.com/reedes>
-" Created:     January 25, 2013
+" Created:     January 27, 2013
 " License:     The MIT License (MIT)
 " ============================================================================
 
@@ -41,12 +41,13 @@ if !exists('g:textobj#sentence#abbreviations')
     \ 'Mr', 'Mr?s', 'Drs?', 'Prof', '[JS]r',
     \ 'vs', 'etc', 'no', 'esp',
     \ '[FM]t',
-    \ 'Ave', 'Blvd', 'C[lt]', 'Str',]
+    \ 'ave?', 'blvd', 'c[lt]', 'str',]
 endif
 
 let s:quotes_std = '"'''
 
-" body (sans term) starts with an uppercase character (excluding acronyms)
+" body (sans terminator) starts with start-of-file, or
+" an uppercase character
 let s:re_sentence_body =
     \ '(%^|[' .
     \ s:quotes_std .
@@ -54,13 +55,12 @@ let s:re_sentence_body =
     \ g:textobj#sentence#quotable_dl .
     \ ']*[[:upper:]])\_.{-}'
 
-" experiment with limit of 10 on lookback
-" TODO query the largest of the abbreviations
+let s:max_abbrev_len = 10
 let s:re_abbrev_neg_lookback =
     \ len(g:textobj#sentence#abbreviations) > 0
     \ ? '(' .
     \   join(g:textobj#sentence#abbreviations, '|') .
-    \   ')@10<!'
+    \   ')@' . s:max_abbrev_len . '<!'
     \ : ''
 
 " matching against end of sentence, '!', '?', and non-abbrev '.'
