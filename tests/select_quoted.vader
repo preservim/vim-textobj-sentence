@@ -150,7 +150,7 @@ Given:
   G
   “F.”
 
-Do (Selected double quoted at end of sentence):
+Do (Selected typographic double quoted at end of sentence):
   jlllvixu
 
 Expect:
@@ -158,3 +158,17 @@ Expect:
   “f.”
 
 ###########################################################
+
+Given:
+  G
+  ‘H.’
+
+Do (Selected typographic single quoted at end of sentence):
+  jlllvixu
+
+Expect:
+  G
+  ‘H.’
+
+###########################################################
+
