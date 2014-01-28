@@ -46,3 +46,14 @@ Expect:
   "A SENTENCE WITH AN M.D. AND A PH.D.. Amazing!"
 
 ###########################################################
+
+Given:
+  "A sentence with 0.3533, -1.3233, and 23432223.23 meters."
+
+Do (select sentence decimal numbers):
+  visU
+
+Expect:
+  "A SENTENCE WITH 0.3533, -1.3233, AND 23432223.23 METERS."
+
+###########################################################

@@ -63,13 +63,12 @@ function! textobj#sentence#init(...)
       \ b:textobj_sentence_quote_dl .
       \ ']*[[:upper:]])\_.{-}'
 
-  let l:max_abbrev_len = 10
+  let l:decimal = ['[-0-9]+']
+  let l:max_abbrev_len = 10   " allow for lookback on -1.2345678
   let l:re_abbrev_neg_lookback =
-      \ len(l:abbreviations) > 0
-      \ ? '(' .
-      \   join(l:abbreviations, '|') .
-      \   ')@' . l:max_abbrev_len . '<!'
-      \ : ''
+      \ '(' .
+      \ join(l:decimal + l:abbreviations, '|') .
+      \ ')@' . l:max_abbrev_len . '<!'
 
   " matching against end of sentence, '!', '?', and non-abbrev '.'
   let l:re_term =
@@ -92,6 +91,7 @@ function! textobj#sentence#init(...)
       \ b:textobj_sentence_quote_dl .
       \ '[:alnum:]–—,;:-]\_s*)@<!'
 
+  " the 'inner' pattern
   let b:textobj_sentence_re_i =
       \ '\v' .
       \ l:re_negative_lookback .
@@ -99,7 +99,6 @@ function! textobj#sentence#init(...)
       \ l:re_sentence_term
 
   " include all whitespace to end of line
-  " TODO do we need $
   let b:textobj_sentence_re_a =
       \ b:textobj_sentence_re_i .
       \ '\s*'

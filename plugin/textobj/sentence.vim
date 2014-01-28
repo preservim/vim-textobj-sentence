@@ -36,10 +36,11 @@ endif
 
 if !exists('g:textobj#sentence#abbreviations')
   let g:textobj#sentence#abbreviations = [
-    \ 'Mr', 'Mr?s', 'Drs?', 'Prof', '[JS]r',
-    \ 'M', 'Ph', 'D',
+    \ 'Mr', 'Mr?s', 'Drs?', '[JS]r',
+    \ 'Ph', 'Univ', 'Prof',
+    \ 'A', 'B', 'C', 'D', 'M',
     \ '[Vv]s', '[Ee]tc', 'no', 'esp',
-    \ '[FM]t',
+    \ '[FM]t', '[Aa]pt',
     \ '[Aa]ve?', '[Bb]lvd', '[Cc][lt]', '[Ll][an]', '[Rr]d', '[Ss]tr?',
     \ ]
 endif
