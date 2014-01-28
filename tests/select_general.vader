@@ -8,7 +8,7 @@ Given:
   into Water Polo. Woo!
 
 Do (select first sentence):
-  vixU
+  visU
 
 Expect:
   SO WHAT WE'VE DONE IS TAKEN THE WHOLE FOOSBALL CONCEPT, AND
@@ -23,7 +23,7 @@ Given:
   into Water Polo. Woo!
 
 Do (select second sentence):
-  /caulked\<Enter>vixU
+  /caulked\<Enter>visU
 
 Expect:
   So what we've done is taken the whole Foosball concept, and
@@ -38,7 +38,7 @@ Given:
   into Water Polo. Woo!
 
 Do (select third sentence):
-  /woo\<Enter>vixU
+  /woo\<Enter>visU
 
 Expect:
   So what we've done is taken the whole Foosball concept, and
@@ -53,7 +53,7 @@ Given:
   at me and said, “Frank, thank you.”
 
 Do (select line starting with upper):
-  /Frank\<Enter>vixu
+  /Frank\<Enter>visu
 
 Expect:
   We've caulked this, added water, and we've turned it into Water Polo. tv's
@@ -68,7 +68,7 @@ Given:
   Water Polo! Aw-haw-haw.
 
 Do (select line ending with colon):
-  vixU
+  visU
 
 Expect:
   FRANK:
@@ -83,7 +83,7 @@ Given:
   Water Polo! Aw-haw-haw.
 
 Do (select sentence with em dash):
-  vixU
+  visU
 
 Expect:
   WE'VE CAULKED THIS—
@@ -98,7 +98,7 @@ Given:
   Water Polo! Aw-haw-haw.
 
 Do (from below, select sentence with em dash):
-  jjvixU
+  jjvisU
 
 Expect:
   WE'VE CAULKED THIS—
@@ -113,7 +113,7 @@ Given:
   Water Polo! Aw-haw-haw.
 
 Do (from below, select sentence with en dash):
-  jjvixU
+  jjvisU
 
 Expect:
   WE'VE CAULKED THIS–
@@ -128,7 +128,7 @@ Given:
   Water Polo! Aw-haw-haw.
 
 Do (select line preceded by number):
-  jvixU
+  jvisU
 
 Expect:
   THE NUMBER 12ABC34
@@ -144,7 +144,7 @@ Given:
   Water Polo! Aw-haw-haw.
 
 Do (select isolated line ending with colon):
-  vixU
+  visU
 
 Expect:
   FRANK:
@@ -159,7 +159,7 @@ Given:
   at me and said, Frank, thank you.
 
 Do (comma before upper case):
-  /Frank\<Enter>vixU
+  /Frank\<Enter>visU
 
 Expect:
   THE OTHER DAY, MY COLON LOOKED UP
@@ -172,7 +172,7 @@ Given:
   at me and said-Frank-thank you.
 
 Do (dash before upper case):
-  /Frank\<Enter>vixU
+  /Frank\<Enter>visU
 
 Expect:
   THE OTHER DAY, MY COLON LOOKED UP
@@ -185,7 +185,7 @@ Given:
   at me and said;Frank;thank you.
 
 Do (semi-colon before upper case):
-  /Frank\<Enter>vixU
+  /Frank\<Enter>visU
 
 Expect:
   THE OTHER DAY, MY COLON LOOKED UP
@@ -198,7 +198,7 @@ Given:
   at me and said: Frank, thank you.
 
 Do (colon before upper case):
-  /Frank\<Enter>vixU
+  /Frank\<Enter>visU
 
 Expect:
   THE OTHER DAY, MY COLON LOOKED UP

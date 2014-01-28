@@ -6,7 +6,7 @@ Given:
   "Why am _I_ Mr. Pink?"
 
 Do (select sentence with Mr.):
-  vixU
+  visU
 
 Expect:
   "WHY AM _I_ MR. PINK?"
@@ -17,7 +17,7 @@ Given:
   "Why am _I_ Mr? Pink?"
 
 Do (select sentence with Mr?):
-  vixU
+  visU
 
 Expect:
   "WHY AM _I_ MR? Pink?"
@@ -28,7 +28,7 @@ Given:
   "A sentence with Mr. Ms. Dr.. Amazing!"
 
 Do (select sentence with multiple acryonyms):
-  vixU
+  visU
 
 Expect:
   "A SENTENCE WITH MR. MS. DR.. Amazing!"
