@@ -48,11 +48,11 @@ let s:quotes_std = '"'''
 
 " body (sans term) starts with an uppercase character (excluding acronyms)
 let s:re_sentence_body =
-    \ '[' .
+    \ '(%^|[' .
     \ s:quotes_std .
     \ g:textobj#sentence#quotable_sl .
     \ g:textobj#sentence#quotable_dl .
-    \ ']*[[:upper:]]\_.{-}'
+    \ ']*[[:upper:]])\_.{-}'
 
 " experiment with limit of 10 on lookback
 " TODO query the largest of the abbreviations
