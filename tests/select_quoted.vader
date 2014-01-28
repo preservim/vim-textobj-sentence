@@ -167,8 +167,29 @@ Do (Selected typographic single quoted at end of sentence):
   jlllvixu
 
 Expect:
-  G
-  ‘H.’
+  g
+  ‘h.’
 
 ###########################################################
 
+Given:
+  Said. ‘TV’s Frank [shouts] “Not the children, Aw-haw-haw.”’
+
+Do (select sentence with compound curly quotes):
+  /TV\<Enter>vixU
+
+Expect:
+  Said. ‘TV’S FRANK [SHOUTS] “NOT THE CHILDREN, AW-HAW-HAW.”’
+
+###########################################################
+
+Given:
+  Said. 'TV's Frank [shouts] "Not the children, Aw-haw-haw."'
+
+Do (select sentence with compound straight quotes):
+  /TV\<Enter>vixU
+
+Expect:
+  Said. 'TV'S FRANK [SHOUTS] "NOT THE CHILDREN, AW-HAW-HAW."'
+
+###########################################################

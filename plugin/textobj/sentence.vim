@@ -52,7 +52,7 @@ let s:re_sentence_body =
     \ s:quotes_std .
     \ g:textobj#sentence#quotable_sl .
     \ g:textobj#sentence#quotable_dl .
-    \ ']?[[:upper:]]\_.{-}'
+    \ ']*[[:upper:]]\_.{-}'
 
 " experiment with limit of 10 on lookback
 " TODO query the largest of the abbreviations
@@ -71,7 +71,7 @@ let s:re_term =
     \ s:quotes_std .
     \ g:textobj#sentence#quotable_sr .
     \ g:textobj#sentence#quotable_dr .
-    \ ']?'
+    \ ']*'
 
 " sentence can also end when followed by at least two line feeds
 let s:re_sentence_term = '(' . s:re_term . '|\ze(\n\n|\_s*%$))'
