@@ -375,10 +375,43 @@ Expect:
 Given:
   Here comes the end of file:
 
-Do (select sentence ending in colon at end of buffer):
+Do (select incomplete sentence ending in colon at end of buffer):
   vixU
 
 Expect:
   HERE COMES THE END OF FILE:
+
+###########################################################
+
+Given:
+  Here comes the end of file-
+
+Do (select incomplete sentence ending in dash at end of buffer):
+  vixU
+
+Expect:
+  HERE COMES THE END OF FILE-
+
+###########################################################
+
+Given:
+  Here comes the end of file;
+
+Do (select incomplete sentence ending in semi-colon at end of buffer):
+  vixU
+
+Expect:
+  HERE COMES THE END OF FILE;
+
+###########################################################
+
+Given:
+  Here comes the end of file
+
+Do (select incomplete sentence at end of buffer):
+  vixU
+
+Expect:
+  HERE COMES THE END OF FILE
 
 ###########################################################
