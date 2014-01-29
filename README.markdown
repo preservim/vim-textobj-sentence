@@ -104,7 +104,7 @@ This plugin adds:
 
 You can manipulation text just as with Vim’s original `as` and `is`
 commands, such as `cis` for change, `vas` for visual selection, `das` for
-deletion, `yas` for yanking to clipboard, etc.. For example:
+deletion, `yas` for yanking to clipboard, etc..
 
 If you prefer to retain the native commands, you can assign other
 characters via your `.vimrc`:
