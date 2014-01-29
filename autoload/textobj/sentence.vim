@@ -50,24 +50,36 @@ function! textobj#sentence#init(...)
   let b:textobj_sentence_quote_sl = l:s_arg[0]
   let b:textobj_sentence_quote_sr = l:s_arg[1]
 
-  let l:abbreviations = get(l:args, 'abbreviations', g:textobj#sentence#abbreviations)
-
-  let l:quotes_std = '"'''
+  let l:quotes_std = '"''*_'
+  let l:leading  =
+      \ '(\[' .
+      \ l:quotes_std .
+      \ b:textobj_sentence_quote_sl .
+      \ b:textobj_sentence_quote_dl
+  let l:trailing =
+      \ ')\]' .
+      \ l:quotes_std .
+      \ b:textobj_sentence_quote_sr .
+      \ b:textobj_sentence_quote_dr
 
   " body (sans terminator) starts with start-of-file, or
   " an uppercase character
   let l:re_sentence_body =
       \ '(%^|[' .
-      \ l:quotes_std .
-      \ b:textobj_sentence_quote_sl .
-      \ b:textobj_sentence_quote_dl .
+      \ l:leading .
       \ ']*[[:upper:]])\_.{-}'
 
-  let l:decimal = ['[-0-9]+']
+  let l:abbreviations =
+      \ get(l:args, 'abbreviations', g:textobj#sentence#abbreviations)
+  let l:bounded_abbrs =
+      \ len(l:abbreviations)
+      \ ? '|<(' . join(l:abbreviations, '|') . ')>'
+      \ : ''
+
   let l:max_abbrev_len = 10   " allow for lookback on -1.2345678
   let l:re_abbrev_neg_lookback =
-      \ '(' .
-      \ join(l:decimal + l:abbreviations, '|') .
+      \ '([-0-9]+' .
+      \ l:bounded_abbrs .
       \ ')@' . l:max_abbrev_len . '<!'
 
   " matching against end of sentence, '!', '?', and non-abbrev '.'
@@ -75,9 +87,7 @@ function! textobj#sentence#init(...)
       \ '([!?]|(' .
       \ l:re_abbrev_neg_lookback .
       \ '\.))+[' .
-      \ l:quotes_std .
-      \ b:textobj_sentence_quote_sr .
-      \ b:textobj_sentence_quote_dr .
+      \ l:trailing .
       \ ']*'
 
   " sentence can also end when followed by at least two line feeds
@@ -86,10 +96,8 @@ function! textobj#sentence#init(...)
   " Avoid matching where more of the sentence can be found on preceding line(s)
   let l:re_negative_lookback =
       \ '([' .
-      \ l:quotes_std .
-      \ b:textobj_sentence_quote_sl .
-      \ b:textobj_sentence_quote_dl .
-      \ '[:alnum:]–—,;:-]\_s*)@<!'
+      \ l:leading .
+      \ '[:alnum:]–—()\[\]_*,;:-]\_s*)@<!'
 
   " the 'inner' pattern
   let b:textobj_sentence_re_i =

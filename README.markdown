@@ -3,21 +3,21 @@
 > Improving on Vim's native sentence motion command
 
 Detecting sentences can be tricky, esp. when the words and punctuation of
-the sentence are interspersed with abbreviations, “quotations,”
-(parentheses), [brackets], hard line breaks and the markup from
-lightweight markup languages.
+a sentence are interspersed with abbreviations, “quotations,”
+(parentheses), [brackets], hard line breaks and the \_\_markup\_\_ from
+\*\*lightweight\*\* markup languages.
 
-While Vim’s native sentence motion command is quite capable, its reach is
-limited and its behavior hard-coded. Thus arises the need for
-a specialized text object as you will find in this plugin.
+While Vim’s native sentence text object is quite capable, its reach is
+limited. As well its behavior remains hard-coded and static. Thus arises
+the need for a specialized text object offered by this plugin.
 
 Features of this plugin:
 
 * Sophisticated sentence text object, supporting selection, motion, etc.
-* Implemented with regular expressions
-* Avoids false sentence termination where common abbreviations are present
+* Implemented with regular expressions via the amazing vim-textobj-user plugin
+* Avoids the premature end-of-sentence where common abbreviations are present
 * Support for “typographical quotes”
-* (SOON) Support for lightweight markup languages (markdown, e.g.)
+* Support for lightweight markup languages (markdown, e.g.)
 * Buffer scoped configuration
 
 ## Requirements
@@ -29,8 +29,7 @@ May require a recent version of Vim.
 Install using Pathogen, Vundle, Neobundle, or your favorite Vim package
 manager.
 
-This plugin has an important (and useful) dependency that you will need to
-install.
+This plugin has an important dependency that you will need to install:
 
 * [kana/vim-textobject-user](https://github.com/kana/vim-textobj-user) - a Vim plugin to create your own text objects without pain
 
@@ -56,9 +55,21 @@ augroup END
 
 ### Decimal numbers and abbreviations
 
-Not all period `.` characters will terminate a sentence. This plugin detects 
-decimal numbers and common abbreviations. By default, the following 
-abbreviations are recognized:
+Though the period `.` glyph will terminate a sentence, it doesn’t
+terminate all sentences. For example, the same glyph is used in
+abbreviations like “M.D.” for Medical Doctor.
+
+But those abbreviations should be allowed for when detecting the
+boundaries of a sentence. The following should be considered a single text
+object, rather than six:
+
+```
+The lair of Dr. Evil, M.D., can be found at 100 Evil St. in Ft.
+Lauderdale.
+```
+
+This plugin detects decimal numbers and common abbreviations. By default,
+the following abbreviations will be recognized:
 
 ```
 let g:textobj#sentence#abbreviations = [
@@ -71,37 +82,31 @@ let g:textobj#sentence#abbreviations = [
   \ ]
 ```
 
-For example, the following sentence will be recognized as a single text
-object.
-
-```
-The lair of Dr. Evil, M.D., can be found at 100 Main St. in Ft. Collins.
-```
-
-Note that you can override or add to the above defaults in your `.vimrc`.
+Note that you can override the above defaults in your `.vimrc`, but be
+sure to include the declaration before you call `textobj#sentence#init()`.
 
 ### Motion commands
 
 Motion commands are a powerful feature of Vim.
 
-This plugin overrides the following motions commands:
+This plugin overrides Vim’s own commands for sentence selection:
+
+* `as` - select ‘around’ sentence with trailing whitespace
+* `is` - select ‘inside’ sentence without trailing whitespace
 
 * `)` - move to start of next sentence
 * `(` - move to start of previous sentence
 
-It adds:
+This plugin adds:
 
 * `g)` - move to end of next sentence
 * `g(` - move to end of previous sentence
 
-You can combine the overridden `s` command with `c` for change, `v` for
-visual selection, `d` for deletion, `y` for yanking to clipboard, etc..
-For example:
+You can manipulation text just as with Vim’s original `as` and `is`
+commands, such as `cis` for change, `vas` for visual selection, `das` for
+deletion, `yas` for yanking to clipboard, etc.. For example:
 
-* `vis` - select ‘inside’ sentence at current cursor position
-* `vas` - select ‘around’ sentence at current cursor position, with trailing whitespace
-
-If you prefer to retain the native Vim command characters, assign other
+If you prefer to retain the native commands, you can assign other
 characters via your `.vimrc`:
 
   ```vim
@@ -112,15 +117,7 @@ characters via your `.vimrc`:
 
 ## See also
 
-Many more abbreviations are available that you can add:
-
-* Perl’s [Lingua::EN::Sentence][ab]
-* Oxford English Dictionary’s [Abbreviations][oe]
-
-[ab]: http://cpansearch.perl.org/src/SHLOMOY/Lingua-EN-Sentence-0.25/lib/Lingua/EN/Sentence.pm
-[oe]: http://public.oed.com/how-to-use-the-oed/abbreviations/
-
-If you find this plugin useful, you may want to check out these others by
+If you find this plugin useful, you might want to check out these others by
 [@reedes][re]:
 
 * [vim-colors-pencil][cp] - color scheme for Vim inspired by IA Writer
@@ -139,12 +136,6 @@ If you find this plugin useful, you may want to check out these others by
 [re]: http://github.com/reedes
 [th]: http://github.com/reedes/vim-thematic
 [wo]: http://github.com/reedes/vim-wordy
-
-## To be implemented soon
-
-* Bracket support
-* Parentheses support
-* Lightweight markup language support
 
 ## Future development
 

@@ -84,12 +84,25 @@ Given:
   I said
   “No. THANK YOU.”
 
-Do (two sentences within curly quotes):
+Do (two sentences within curly quotes, second):
   vis\<Esc>`>aX
 
 Expect:
   I said
   “No.X THANK YOU.”
+
+###########################################################
+
+Given:
+  “I said”
+  No. THANK YOU.
+
+Do (two sentences within curly quotes, first):
+  vis\<Esc>`>aX
+
+Expect:
+  “I said”
+  No.X THANK YOU.
 
 ###########################################################
 
