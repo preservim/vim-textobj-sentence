@@ -73,14 +73,14 @@ This plugin detects decimal numbers and common abbreviations. By default,
 the following abbreviations will be recognized:
 
 ```
-let g:textobj#sentence#abbreviations = [
-  \ 'Mr', 'Mr?s', 'Drs?', '[JS]r',
-  \ 'Ph', 'Univ', 'Prof',
-  \ '[A-Za-z]',
-  \ '[Vv]s', '[Ee]tc', 'no', 'esp', 'incl',
-  \ '[FM]t', '[Aa]pt',
-  \ '[Aa]ve?', '[Bb]lvd', '[Cc][lt]', '[Ll][an]', '[Rr]d', '[Ss]tr?',
-  \ ]
+  let g:textobj#sentence#abbreviations = [
+    \ '[ABCDIMPSUabcdegimpsv]',
+    \ 'l[ab]', '[eRr]d', 'Ph', '[Ccp]l', '[Lli]n', '[cn]o',
+    \ '[Oe]p', '[DJMSh]r', '[MVv]s', '[CFMPScfpw]t',
+    \ 'alt', '[Ee]tc', 'div', 'es[pt]', '[Ll]td', 'min', 'M.D',
+    \ '[MD]rs', '[Aa]pt', '[Aa]ve?', '[Ss]tr?',
+    \ '[Aa]ssn', '[Bb]lvd', '[Dd]ept', 'incl', 'Inst', 'Prof', 'Univ',
+    \ ]
 ```
 
 Note that you can override the above defaults in your `.vimrc`, but be
