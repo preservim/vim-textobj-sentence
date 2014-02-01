@@ -62,12 +62,16 @@ function! textobj#sentence#init(...)
       \ b:textobj_sentence_quote_sr .
       \ b:textobj_sentence_quote_dr
 
+  " Avoid matching where more of the sentence can be found on preceding line(s)
+  let l:re_negative_lookback =
+      \ '([' .
+      \ l:leading .
+      \ '[:alnum:]–—()\[\]_*,;:-]\_s*)@2000<!'
+
   " body (sans terminator) starts with start-of-file, or
   " an uppercase character
   let l:re_sentence_body =
-      \ '(%^|[' .
-      \ l:leading .
-      \ ']*[[:upper:]])\_.{-}'
+      \ '(%^|(\_^|\s)\zs[' . l:leading .  ']*[[:upper:]])\_.{-}'
 
   let l:abbreviations =
       \ get(l:args, 'abbreviations', g:textobj#sentence#abbreviations)
@@ -92,12 +96,6 @@ function! textobj#sentence#init(...)
 
   " sentence can also end when followed by at least two line feeds
   let l:re_sentence_term = '(' . l:re_term . '|\ze(\n\n|\_s*%$))'
-
-  " Avoid matching where more of the sentence can be found on preceding line(s)
-  let l:re_negative_lookback =
-      \ '([' .
-      \ l:leading .
-      \ '[:alnum:]–—()\[\]_*,;:-]\_s*)@<!'
 
   " the 'inner' pattern
   let b:textobj_sentence_re_i =

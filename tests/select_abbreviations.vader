@@ -89,11 +89,13 @@ Expect:
 ###########################################################
 
 Given:
+  TV's
   Magnum, P.I. lives at Robin’s Nest, located at 11435 18th Ave., Oahu, HI.
 
 Do (P.I. test):
-  /Robin\<Enter>visU
+  /Nest\<Enter>visU
 
 Expect:
+  TV'S
   MAGNUM, P.I. LIVES AT ROBIN’S NEST, LOCATED AT 11435 18TH AVE., OAHU, HI.
 
