@@ -77,7 +77,7 @@ the following abbreviations will be recognized:
     \ '[ABCDIMPSUabcdegimpsv]',
     \ 'l[ab]', '[eRr]d', 'Ph', '[Ccp]l', '[Lli]n', '[cn]o',
     \ '[Oe]p', '[DJMSh]r', '[MVv]s', '[CFMPScfpw]t',
-    \ 'alt', '[Ee]tc', 'div', 'es[pt]', '[Ll]td', 'min', 'M.D',
+    \ 'alt', '[Ee]tc', 'div', 'es[pt]', '[Ll]td', 'min',
     \ '[MD]rs', '[Aa]pt', '[Aa]ve?', '[Ss]tr?',
     \ '[Aa]ssn', '[Bb]lvd', '[Dd]ept', 'incl', 'Inst', 'Prof', 'Univ',
     \ ]
