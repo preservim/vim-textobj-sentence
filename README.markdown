@@ -127,6 +127,7 @@ If you find this plugin useful, you might want to check out these others by
 * [vim-pencil][pn] - rethinking Vim as a tool for writers
 * [vim-quotable][qu] - extends Vim to support typographic (‘curly’) quotes
 * [vim-thematic][th] - modify Vim’s appearance to suit your task and environment
+* [vim-wheel][wh] - screen-anchored cursor movement for Vim
 * [vim-wordy][wo] - uncovering usage problems in writing
 
 [cp]: http://github.com/reedes/vim-colors-pencil
@@ -136,6 +137,7 @@ If you find this plugin useful, you might want to check out these others by
 [qu]: http://github.com/reedes/vim-quotable
 [re]: http://github.com/reedes
 [th]: http://github.com/reedes/vim-thematic
+[wh]: http://github.com/reedes/vim-wheel
 [wo]: http://github.com/reedes/vim-wordy
 
 ## Future development
