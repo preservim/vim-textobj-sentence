@@ -72,3 +72,28 @@ Expect:
   STORED IN FREEZERS? I figured, “Hey, why not bring the meat back to life?”
 
 ###########################################################
+
+Given:
+  Though the period `.` glyph/character will terminate a sentence, it
+  doesn’t terminate all sentences. The same glyph is used in
+  abbreviations like ‘M.D.’ for Medical Doctor, for example.
+
+Do (M.D. test):
+  /Doctor\<Enter>visU
+
+Expect:
+  Though the period `.` glyph/character will terminate a sentence, it
+  doesn’t terminate all sentences. THE SAME GLYPH IS USED IN
+  ABBREVIATIONS LIKE ‘M.D.’ FOR MEDICAL DOCTOR, FOR EXAMPLE.
+
+###########################################################
+
+Given:
+  Magnum, P.I. lives at Robin’s Nest, located at 11435 18th Ave., Oahu, HI.
+
+Do (P.I. test):
+  /Robin\<Enter>visU
+
+Expect:
+  MAGNUM, P.I. LIVES AT ROBIN’S NEST, LOCATED AT 11435 18TH AVE., OAHU, HI.
+
