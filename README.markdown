@@ -63,7 +63,7 @@ abbreviations like ‘M.D.’ for Medical Doctor, for example.
 
 But those abbreviations should be compensated for when detecting the
 boundaries of a sentence. The following should be considered one text
-objects, rather than four:
+object, rather than four:
 
 ```
 Magnum, P.I. lives at Robin’s Nest, located at 11435 18th Ave., Oahu, HI.
@@ -108,7 +108,7 @@ commands, such as `cis` for change, `vas` for visual selection, `das` for
 deletion, `yas` for yanking to clipboard, etc..
 
 If you prefer to retain the native commands, you can assign other
-characters via your `.vimrc`:
+key mappings via your `.vimrc`:
 
   ```vim
   let g:textobj#sentence#select = 's'
