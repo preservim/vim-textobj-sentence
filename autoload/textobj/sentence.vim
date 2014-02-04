@@ -71,7 +71,7 @@ function! textobj#sentence#init(...)
   " body (sans terminator) starts with start-of-file, or
   " an uppercase character
   let l:re_sentence_body =
-      \ '(%^|(\_^|\s)\zs[' . l:leading .  ']*[[:upper:]])\_.{-}'
+      \ '(%^\zs|\n\s*\n\s*\zs|(^|\s)\zs[' . l:leading . ']*[[:upper:]])\_.{-}'
 
   let l:abbreviations =
       \ get(l:args, 'abbreviations', g:textobj#sentence#abbreviations)
@@ -95,7 +95,7 @@ function! textobj#sentence#init(...)
       \ ']*'
 
   " sentence can also end when followed by at least two line feeds
-  let l:re_sentence_term = '(' . l:re_term . '|\ze(\n\n|\_s*%$))'
+  let l:re_sentence_term = '(' . l:re_term . '|\ze(\s*\n\s*\n\s*|\_s*%$))'
 
   " the 'inner' pattern
   let b:textobj_sentence_re_i =
