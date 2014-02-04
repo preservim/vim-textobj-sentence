@@ -58,7 +58,7 @@ augroup END
 ### Decimal numbers and abbreviations
 
 Though the period `.` glyph/character will terminate a sentence, it
-doesn’t terminate all sentences. The same glyph is used in
+use doesn't always indicate so. The same glyph is used in
 abbreviations like ‘M.D.’ for Medical Doctor, for example.
 
 But those abbreviations should be compensated for when detecting the
