@@ -4,7 +4,7 @@
 
 Detecting a sentence can be tricky, esp. when its words and punctuation are 
 sprinkled w. abbreviations, “quotations,” (parentheses), [brackets], 
-**\*\*lightweight\*\*** _\_markup\__, and hard<br>
+\*\*lightweight\*\* \_markup\_, and hard<br>
 line<br>
 breaks.
 
