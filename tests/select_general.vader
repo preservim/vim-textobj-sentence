@@ -39,7 +39,7 @@ Given:
   into Water Polo. Woo!
 
 Do (select third sentence):
-  /woo\<Enter>visU
+  /Woo\<Enter>visU
 
 Expect:
   So what we've done is taken the whole Foosball concept, and
