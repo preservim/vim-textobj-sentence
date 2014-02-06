@@ -236,3 +236,14 @@ Expect:
   into Water Polo. XXXX
 
 ###########################################################
+
+Given:
+  First 1 sentence. Second 2 sentence. Third sentence.
+
+Do (select all of second sentence):
+  /2\<Enter>vasrX
+
+Expect:
+  First 1 sentence. XXXXXXXXXXXXXXXXXXXThird sentence.
+
+###########################################################
