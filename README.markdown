@@ -2,10 +2,11 @@
 
 > Improving on Vim's native sentence text object and motion
 
-Detecting sentences can be tricky, esp. when the words and punctuation of
-a sentence are interspersed with abbreviations, “quotations,”
-(parentheses), [brackets], the \_\_markup\_\_ from \*\*lightweight\*\*
-markup languages, and hard<br>line<br>breaks.
+Detecting a sentence can be tricky, esp. when its words and punctuation are 
+sprinkled w. abbreviations, “quotations,” (parentheses), [brackets], 
+**\*\*lightweight\*\*** _\_markup\__, and hard<br>
+line<br>
+breaks.
 
 While Vim’s native sentence text object is quite capable, it’s behavior
 remains hard-coded and cannot be extended. Thus arises the need for
@@ -14,7 +15,7 @@ a specialized text object offered by this plugin.
 Features of this plugin:
 
 * Sophisticated sentence text object, supporting selection, motion, etc.
-* Implemented with regular expressions via the [vim-textobj-user][vt]
+* Implemented with regular expressions via the [kana/vim-textobj-user][vt]
   plugin
 * Supports sentences containing common abbreviations (configurable)
 * Support for sentences containing typographical characters, incl. quotes,
@@ -45,10 +46,7 @@ enable sentence  in `markdown` and `textile` files, place in your
 `.vimrc`:
 
 ```vim
-" standard vim command to enable loading the plugin files
-" (and their indent support) for specific file types.
-" It may already be in your .vimrc!
-filetype plugin indent on
+filetype plugin indent on   " may already be in your .vimrc
 
 augroup textobj_sentence
   autocmd!
@@ -146,6 +144,6 @@ If you find this plugin useful, check out these others by [@reedes][re]:
 
 If you’ve spotted a problem or have an idea on improving this plugin,
 please post it to the github project issue page. Pull requests that add
-new regression tests (even failing ones!) are welcome too.
+new regression tests (even failing ones that reveal bugs) are welcome too.
 
 <!-- vim: set tw=74 :-->
