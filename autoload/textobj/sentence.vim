@@ -71,7 +71,7 @@ function! textobj#sentence#init(...)
   " body (sans terminator) starts with start-of-file, or
   " an uppercase character
   let l:re_sentence_body =
-      \ '(%^\zs|\n\s*\n\s*\zs|(^|\s)\zs[' . l:leading . ']*[[:upper:]])\_.{-}'
+      \ '(%^\zs|\n\s*\n\s*\zs|[' . l:leading . ']*[[:upper:]][^.])\_.{-}'
 
   let l:abbreviations =
       \ get(l:args, 'abbreviations', g:textobj#sentence#abbreviations)
