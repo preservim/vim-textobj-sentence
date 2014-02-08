@@ -12,7 +12,6 @@ if &cp || (exists('g:autoloaded_textobj_sentence')
       \ && !exists('g:force_reload_textobj_sentence'))
   finish
 endif
-let g:autoloaded_textobj_sentence = 1
 
 function! s:select(pattern)
   call search(a:pattern, 'bc')
