@@ -35,14 +35,6 @@ if !exists('g:textobj#sentence#singleDefault')
 endif
 
 if !exists('g:textobj#sentence#abbreviations')
-  "let g:textobj#sentence#abbreviations = [
-  "  \ 'Mr', 'Mr?s', 'Drs?', '[JS]r',
-  "  \ 'Ph', 'Univ', 'Prof',
-  "  \ '[A-Za-z]',
-  "  \ '[Vv]s', '[Ee]tc', 'no', 'esp', 'incl',
-  "  \ '[FM]t', '[Aa]pt',
-  "  \ '[Aa]ve?', '[Bb]lvd', '[Cc][lt]', '[Ll][an]', '[Rr]d', '[Ss]tr?',
-  "  \ ]
   let g:textobj#sentence#abbreviations = [
     \ '[ABCDIMPSUabcdegimpsv]',
     \ 'l[ab]', '[eRr]d', 'Ph', '[Ccp]l', '[Lli]n', '[cn]o',
