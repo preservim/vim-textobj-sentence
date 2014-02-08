@@ -45,10 +45,7 @@ enable sentence  in `markdown` and `textile` files, place in your
 `.vimrc`:
 
 ```vim
-" standard vim command to enable loading the plugin files
-" (and their indent support) for specific file types.
-" It may already be in your .vimrc!
-filetype plugin indent on
+filetype plugin indent on       " may already be in your .vimrc
 
 augroup textobj_sentence
   autocmd!
@@ -127,7 +124,7 @@ If you find this plugin useful, check out these others by [@reedes][re]:
 * [vim-lexical][lx] - building on Vim’s spell-check and thesaurus/dictionary completion
 * [vim-litecorrect][lc] - lightweight auto-correction for Vim
 * [vim-pencil][pn] - rethinking Vim as a tool for writers
-* [vim-quotable][qu] - extends Vim to support typographic (‘curly’) quotes
+* [vim-textobj-quote][qu] - extends Vim to support typographic (‘curly’) quotes
 * [vim-thematic][th] - modify Vim’s appearance to suit your task and environment
 * [vim-wheel][wh] - screen-anchored cursor movement for Vim
 * [vim-wordy][wo] - uncovering usage problems in writing
@@ -136,7 +133,7 @@ If you find this plugin useful, check out these others by [@reedes][re]:
 [lc]: http://github.com/reedes/vim-litecorrect
 [lx]: http://github.com/reedes/vim-lexical
 [pn]: http://github.com/reedes/vim-pencil
-[qu]: http://github.com/reedes/vim-quotable
+[qu]: http://github.com/reedes/vim-textobj-quote
 [re]: http://github.com/reedes
 [th]: http://github.com/reedes/vim-thematic
 [wh]: http://github.com/reedes/vim-wheel
