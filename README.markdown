@@ -13,12 +13,10 @@ a specialized text object offered by this plugin.
 
 Features of this plugin:
 
-* Sophisticated sentence text object, supporting selection, motion, etc.
-* Implemented with regular expressions via the [vim-textobj-user][vt]
-  plugin
+* Sophisticated sentence text object, supporting selection, motion, and jump
+* Implemented with regular expressions via the [vim-textobj-user][vt] plugin
 * Supports sentences containing common abbreviations (configurable)
-* Support for sentences containing typographical characters, incl. quotes,
-  em dash, etc.
+* Support for sentences containing typographical characters, incl. quotes, em dash, etc.
 * Support for lightweight markup languages (markdown, e.g.)
 * Buffer scoped configuration
 
@@ -45,7 +43,8 @@ enable sentence  in `markdown` and `textile` files, place in your
 `.vimrc`:
 
 ```vim
-filetype plugin indent on       " may already be in your .vimrc
+set nocompatible            " this may already be in your .vimrc
+filetype plugin indent on   " ...and this too
 
 augroup textobj_sentence
   autocmd!
@@ -90,22 +89,24 @@ be sure to include the declaration before your call to
 
 Motion commands on text objects are a powerful feature of Vim.
 
-This plugin overrides Vim’s own commands for sentence selection:
+This plugin overrides Vim’s native commands for sentence selection:
 
-* `as` - select _around_ sentence with trailing whitespace
-* `is` - select _inside_ sentence without trailing whitespace
+* `as` - select ‘_around_’ sentence with trailing whitespace
+* `is` - select ‘_inside_’ sentence without trailing whitespace
 
 * `)` - move to start of next sentence
 * `(` - move to start of previous sentence
 
 This plugin adds:
 
-* `g)` - move to end of next sentence
-* `g(` - move to end of previous sentence
+* `g)` - jump to end of current sentence
+* `g(` - jump to end of previous sentence
 
 You can manipulate text just as with Vim’s original `as` and `is`
 commands, such as `cis` for change, `vas` for visual selection, `das` for
-deletion, `yas` for yanking to clipboard, etc..
+deletion, `yas` for yanking to clipboard, etc.. Note that count isn’t
+supported at present (due to limitations of the underlying
+vim-textobj-user) but repeat with `.` does work.
 
 If you prefer to retain the native commands, you can assign other
 key mappings via your `.vimrc`:
