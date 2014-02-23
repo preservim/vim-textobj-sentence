@@ -94,8 +94,8 @@ This plugin overrides Vim’s native commands for sentence selection:
 * `as` - select ‘_around_’ sentence with trailing whitespace
 * `is` - select ‘_inside_’ sentence without trailing whitespace
 
-* `)` - move to start of next sentence
 * `(` - move to start of previous sentence
+* `)` - move to start of next sentence
 
 This plugin adds:
 
@@ -124,6 +124,7 @@ If you find this plugin useful, check out these others by [@reedes][re]:
 * [vim-colors-pencil][cp] - color scheme for Vim inspired by IA Writer
 * [vim-lexical][lx] - building on Vim’s spell-check and thesaurus/dictionary completion
 * [vim-litecorrect][lc] - lightweight auto-correction for Vim
+* [vim-one][vo] - make use of Vim’s _+clientserver_ capabilities 
 * [vim-pencil][pn] - rethinking Vim as a tool for writers
 * [vim-textobj-quote][qu] - extends Vim to support typographic (‘curly’) quotes
 * [vim-thematic][th] - modify Vim’s appearance to suit your task and environment
@@ -133,6 +134,7 @@ If you find this plugin useful, check out these others by [@reedes][re]:
 [cp]: http://github.com/reedes/vim-colors-pencil
 [lc]: http://github.com/reedes/vim-litecorrect
 [lx]: http://github.com/reedes/vim-lexical
+[vo]: http://github.com/reedes/vim-one
 [pn]: http://github.com/reedes/vim-pencil
 [qu]: http://github.com/reedes/vim-textobj-quote
 [re]: http://github.com/reedes
