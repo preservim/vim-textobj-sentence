@@ -55,13 +55,11 @@ augroup END
 
 ### Decimal numbers and abbreviations
 
-Though the period `.` glyph/character will terminate a sentence, it
-use doesn't always indicate so. The same glyph is used in
-abbreviations like ‘M.D.’ for Medical Doctor, for example.
-
-But those abbreviations should be tolerated when detecting the boundaries
-of a sentence. The following should be considered one text object, rather
-than four:
+Though the period `.` glyph/character will normally terminate a sentence,
+it also has other uses. For example, the same glyph is used in
+abbreviations like  ‘M.D.’ for Medical Doctor. These abbreviations, however,
+should be tolerated when detecting the boundaries of a sentence. The
+following should be considered one text object, rather than four:
 
 ```
 Magnum, P.I. lives at Robin’s Nest, located at 11435 18th Ave., Oahu, HI.
