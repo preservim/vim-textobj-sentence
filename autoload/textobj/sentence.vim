@@ -85,9 +85,9 @@ function! textobj#sentence#init(...)
       \ l:bounded_abbrs .
       \ ')@' . l:max_abbrev_len . '<!'
 
-  " matching against end of sentence, '!', '?', and non-abbrev '.'
+  " matching against end of sentence, '!', ';', '?', and non-abbrev '.'
   let l:re_term =
-      \ '([!?]|(' .
+      \ '([!;?]|(' .
       \ l:re_abbrev_neg_lookback .
       \ '\.))+[' .
       \ l:trailing .
