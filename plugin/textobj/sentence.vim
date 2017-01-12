@@ -42,6 +42,7 @@ if !exists('g:textobj#sentence#abbreviations')
     \ 'alt', '[Ee]tc', 'div', 'es[pt]', '[Ll]td', 'min',
     \ '[MD]rs', '[Aa]pt', '[Aa]ve?', '[Ss]tr?',
     \ '[Aa]ssn', '[Bb]lvd', '[Dd]ept', 'incl', 'Inst', 'Prof', 'Univ',
+    \ 'Messrs',
     \ ]
 endif
 
