@@ -128,6 +128,7 @@ If you find this plugin useful, check out these others by [@reedes][re]:
 * [vim-thematic][th] - modify Vim’s appearance to suit your task and environment
 * [vim-wheel][wh] - screen-anchored cursor movement for Vim
 * [vim-wordy][wo] - uncovering usage problems in writing
+* [vim-wordchipper][wc] - power tool for shredding text in Insert mode
 
 [cp]: http://github.com/reedes/vim-colors-pencil
 [lc]: http://github.com/reedes/vim-litecorrect
@@ -139,6 +140,7 @@ If you find this plugin useful, check out these others by [@reedes][re]:
 [th]: http://github.com/reedes/vim-thematic
 [wh]: http://github.com/reedes/vim-wheel
 [wo]: http://github.com/reedes/vim-wordy
+[wc]: http://github.com/reedes/vim-wordchipper
 
 ## Future development
 
