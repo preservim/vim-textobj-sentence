@@ -35,6 +35,8 @@ function! textobj#sentence#select_i()
   return s:select(b:textobj_sentence_re_i)
 endfunction
 
+let g:re_extra_sentence_term = ''
+
 function! textobj#sentence#init(...)
   let l:args = a:0 ? a:1 : {}
 
@@ -87,7 +89,9 @@ function! textobj#sentence#init(...)
 
   " matching against end of sentence, '!', '?', and non-abbrev '.'
   let l:re_term =
-      \ '([!?]|(' .
+      \ '([!?]' .
+      \ g:re_extra_sentence_term .
+      \ '|(' .
       \ l:re_abbrev_neg_lookback .
       \ '\.))+[' .
       \ l:trailing .
