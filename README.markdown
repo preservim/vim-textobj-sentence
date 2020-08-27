@@ -115,6 +115,33 @@ key mappings via your `.vimrc`:
   let g:textobj#sentence#move_n = ')'
   ```
 
+### Additional custom sentence terminators
+
+Additional sentence terminators can be added by setting
+`g:re_extra_sentence_term`.  For example, the following will count
+semicolons as sentence terminators:
+
+```vim
+let g:re_extra_sentence_term = '|;'
+
+call textobj#sentence#init()
+```
+
+Note this variable is a regular expression, and evey entry needs to be
+preceeded by `|`.
+
+The following can be used to count LaTeX environments as sentence
+terminators, which is convenient for automatic rewrapping (e.g., via
+`gqis`) that does not touch environments which are part of the sentence:
+
+```vim
+let g:re_extra_sentence_term =
+  \ '|\\begin\{[a-zA-Z]*\}' .
+  \ '|\\end\{[a-zA-Z]*\}'
+
+call textobj#sentence#init()
+```
+
 ## See also
 
 If you find this plugin useful, check out these others by [@reedes][re]:
@@ -122,7 +149,7 @@ If you find this plugin useful, check out these others by [@reedes][re]:
 * [vim-colors-pencil][cp] - color scheme for Vim inspired by IA Writer
 * [vim-lexical][lx] - building on Vim’s spell-check and thesaurus/dictionary completion
 * [vim-litecorrect][lc] - lightweight auto-correction for Vim
-* [vim-one][vo] - make use of Vim’s _+clientserver_ capabilities 
+* [vim-one][vo] - make use of Vim’s _+clientserver_ capabilities
 * [vim-pencil][pn] - rethinking Vim as a tool for writers
 * [vim-textobj-quote][qu] - extends Vim to support typographic (‘curly’) quotes
 * [vim-thematic][th] - modify Vim’s appearance to suit your task and environment
@@ -146,7 +173,7 @@ If you find this plugin useful, check out these others by [@reedes][re]:
 
 If you’ve spotted a problem or have an idea on improving this plugin,
 please post it to the github project issue page. Pull requests that add
-new regression tests (even failing ones that demonstrate a bug!) are 
+new regression tests (even failing ones that demonstrate a bug!) are
 welcome too.
 
 <!-- vim: set tw=74 :-->
