@@ -35,7 +35,9 @@ function! textobj#sentence#select_i()
   return s:select(b:textobj_sentence_re_i)
 endfunction
 
-let g:re_extra_sentence_term = ''
+if !exists('g:re_extra_sentence_term')
+  let g:re_extra_sentence_term = ''
+endif
 
 function! textobj#sentence#init(...)
   let l:args = a:0 ? a:1 : {}
