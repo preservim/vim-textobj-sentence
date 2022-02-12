@@ -16,22 +16,27 @@ Features of this plugin:
 * Sophisticated sentence text object, supporting selection, motion, and jump
 * Implemented with regular expressions via the [vim-textobj-user][vt] plugin
 * Supports sentences containing common abbreviations (configurable)
-* Support for sentences containing typographical characters, incl. quotes, em dash, etc.
+* Support for sentences containing typographical characters, incl. quotes,
+  em dash, etc.
 * Support for lightweight markup languages (markdown, e.g.)
 * Buffer scoped configuration
 
-## Requirements
-
-May require a recent version of Vim.
-
 ## Installation
 
-Install using Pathogen, Vundle, Neobundle, or your favorite Vim package
-manager.
+You can install using your favorite Vim package manager. (E.g.,
+[Pathogen][pathogen], [Vundle][vundle], or [Plug][plug].) If you are using
+a recent version of vim or neovim, you can also use native package
+support. (See [:help packages][packages].)
+
+[pathogen]: https://github.com/tpope/vim-pathogen
+[vundle]: https://github.com/VundleVim/Vundle.vim
+[plug]: https://github.com/junegunn/vim-plug
+[packages]: https://vimhelp.org/repeat.txt.html#packages
 
 This plugin has an essential dependency that you will need to install:
 
-* [kana/vim-textobj-user][vt] - a Vim plugin to create your own text objects without pain
+* [kana/vim-textobj-user][vt] - a Vim plugin to create your own text
+  objects without pain
 
 [vt]: https://github.com/kana/vim-textobj-user
 
@@ -117,12 +122,13 @@ key mappings via your `.vimrc`:
 
 ## See also
 
-If you find this plugin useful, check out these others by [@reedes][re]:
+If you find this plugin useful, check out these others originally by
+[@reedes][re]:
 
 * [vim-colors-pencil][cp] - color scheme for Vim inspired by IA Writer
-* [vim-lexical][lx] - building on Vim’s spell-check and thesaurus/dictionary completion
+* [vim-lexical][lx] - building on Vim’s spell-check and
+  thesaurus/dictionary completion
 * [vim-litecorrect][lc] - lightweight auto-correction for Vim
-* [vim-one][vo] - make use of Vim’s _+clientserver_ capabilities 
 * [vim-pencil][pn] - rethinking Vim as a tool for writers
 * [vim-textobj-quote][qu] - extends Vim to support typographic (‘curly’) quotes
 * [vim-thematic][th] - modify Vim’s appearance to suit your task and environment
@@ -130,23 +136,22 @@ If you find this plugin useful, check out these others by [@reedes][re]:
 * [vim-wordy][wo] - uncovering usage problems in writing
 * [vim-wordchipper][wc] - power tool for shredding text in Insert mode
 
-[cp]: http://github.com/reedes/vim-colors-pencil
-[lc]: http://github.com/reedes/vim-litecorrect
-[lx]: http://github.com/reedes/vim-lexical
-[vo]: http://github.com/reedes/vim-one
-[pn]: http://github.com/reedes/vim-pencil
-[qu]: http://github.com/reedes/vim-textobj-quote
-[re]: http://github.com/reedes
-[th]: http://github.com/reedes/vim-thematic
-[wh]: http://github.com/reedes/vim-wheel
-[wo]: http://github.com/reedes/vim-wordy
-[wc]: http://github.com/reedes/vim-wordchipper
+[re]: https://github.com/reedes
+[cp]: https://github.com/preservim/vim-colors-pencil
+[lx]: https://github.com/preservim/vim-lexical
+[lc]: https://github.com/preservim/vim-litecorrect
+[pn]: https://github.com/preservim/vim-pencil
+[qu]: https://github.com/preservim/vim-textobj-quote
+[th]: https://github.com/preservim/vim-thematic
+[wh]: https://github.com/preservim/vim-wheel
+[wo]: https://github.com/preservim/vim-wordy
+[wc]: https://github.com/preservim/vim-wordchipper
 
 ## Future development
 
 If you’ve spotted a problem or have an idea on improving this plugin,
-please post it to the github project issue page. Pull requests that add
-new regression tests (even failing ones that demonstrate a bug!) are 
-welcome too.
+please post it to the [GitHub project issue page][issues].
+
+[issues]: https://github.com/preservim/vim-lexical/issues
 
 <!-- vim: set tw=74 :-->

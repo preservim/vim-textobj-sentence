@@ -1,7 +1,7 @@
 " ============================================================================
 " File:        textobj_sentence.vim
 " Description: load functions for vim-textobj_sentence plugin
-" Maintainer:  Reed Esau <github.com/reedes>
+" Maintainer:  preservim <https://github.com/preservim>
 " Created:     January 27, 2013
 " License:     The MIT License (MIT)
 " ============================================================================
