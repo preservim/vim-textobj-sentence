@@ -152,6 +152,6 @@ If you find this plugin useful, check out these others originally by
 If you’ve spotted a problem or have an idea on improving this plugin,
 please post it to the [GitHub project issue page][issues].
 
-[issues]: https://github.com/preservim/vim-lexical/issues
+[issues]: https://github.com/preservim/vim-textobj-sentence/issues
 
 <!-- vim: set tw=74 :-->
